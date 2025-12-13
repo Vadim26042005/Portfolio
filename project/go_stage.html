@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GO Stage</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="language_div">
+        <p class="language">Language:</p>
+        <button
+          class="lang-btn active"
+          id="fr_button"
+          onclick="switchLanguage('FR')"
+        >
+          Français
+        </button>
+        <button class="lang-btn" id="en_button" onclick="switchLanguage('EN')">
+          English
+        </button>
+        <p><a href="../index.html" class="lang-btn">Go back</a></p>
+      </div>
+    </header>
+
+    <h1 id="title"></h1>
+    <div class="marquee">
+      <h1 class="item1 delay1">Equipe</h1>
+      <h1 class="item1 delay2">Equipe</h1>
+      <h1 class="item1 delay3">Equipe</h1>
+      <h1 class="item1 delay4">Equipe</h1>
+      <h1 class="item1 delay5">Equipe</h1>
+    </div>
+    <div class="marquee">
+      <h1 class="item2 delay1_2">Organisation</h1>
+      <h1 class="item2 delay2_2">Organisation</h1>
+      <h1 class="item2 delay3_2">Organisation</h1>
+      <h1 class="item2 delay4_2">Organisation</h1>
+      <h1 class="item2 delay5_2">Organisation</h1>
+    </div>
+    <div class="marquee">
+      <h1 class="item3 delay1_3">GitHub</h1>
+      <h1 class="item3 delay2_3">GitHub</h1>
+      <h1 class="item3 delay3_3">GitHub</h1>
+      <h1 class="item3 delay4_3">GitHub</h1>
+      <h1 class="item3 delay5_3">GitHub</h1>
+    </div>
+
+    <main>
+      <div class="project_prop">
+        <div class="discription">
+          <div>
+            <img
+              src="../image/gost_desc.png"
+              alt="logo"
+              class="project_image_gost"
+            />
+          </div>
+          <div>
+            <h2 id="description_title">Description</h2>
+            <p id="addInfo"></p>
+          </div>
+        </div>
+
+        <div class="about_task">
+          <div class="task">
+            <h3>Task 1</h3>
+            <p id="project_task"></p>
+          </div>
+
+          <div class="task">
+            <h3>Task 2</h3>
+            <p id="project_task_two"></p>
+          </div>
+
+          <div class="task">
+            <h3>Task 3</h3>
+            <p id="project_task_tree"></p>
+          </div>
+        </div>
+        <a href="../index.html" class="back_btn"><h3>Go back</h3></a>
+      </div>
+    </main>
+
+    <footer><a href="#"></a></footer>
+
+    <script>
+      // Translations used on this page
+      const trans = {
+        FR: {
+          title: "GoStage",
+          description_title: "Description",
+          addInfo:
+            "<strong>GoStage</strong> est un projet réalisé en <strong>équipe</strong> dont l’objectif était de créer un site web permettant aux <strong>étudiants</strong> en recherche de stage et aux <strong>entreprises</strong> à la recherche de stagiaires de se mettre en contact.\n\nCe projet avait également pour but de <strong>tester la collaboration</strong> entre les membres du groupe, ainsi que de travailler sur différents langages web comme <strong>PHP</strong>, <strong>CSS</strong>, <strong>HTML</strong> et <strong>JavaScript</strong>.",
+
+          project_task:
+            "Mes tâches se concentraient principalement sur la partie <strong>Back-end</strong>.\n\nÀ l’origine, j’étais chargé de <strong>déployer</strong> le site et de le <strong>sécuriser</strong>, mais cette mission a finalement été attribuée à un autre membre.\nJ’ai donc travaillé sur la section permettant aux <strong>étudiants</strong> et aux <strong>entreprises</strong> d’<strong>ajouter</strong> et de <strong>modifier</strong> leurs informations dans leur <strong>profil</strong>. Le profil comprenait : photo, nom, prénom, email, cursus, CV, description, et les <strong>offres de stage mises en favoris</strong>.\n\nPour les entreprises, le profil contenait des champs différents, adaptés à leur activité.",
+
+          project_task_two:
+            "Ma seconde tâche a été de créer la <strong>liste des offres</strong>.<br><br>Les <strong>entreprises</strong> pouvaient y <strong>créer</strong>, <strong>consulter</strong>, <strong>modifier</strong> et <strong>supprimer</strong> leurs offres, tandis que les <strong>étudiants</strong> pouvaient <strong>consulter</strong> ces offres et les <strong>ajouter à leurs favoris</strong>.<br>Le point le plus complexe de cette tâche a été l’<strong>affichage dynamique</strong> avec <strong>JavaScript</strong> et la <strong>gestion des filtres</strong> pour différencier la vue des entreprises et celle des étudiants (affichage des favoris sur leur profil).",
+
+          project_task_tree:
+            "Enfin, ma dernière tâche consistait à <strong>appliquer du style</strong> à la partie <strong>Front-end</strong> afin d’obtenir un rendu <strong>esthétique</strong> et <strong>professionnel</strong> grâce au <strong>CSS</strong>.",
+        },
+        EN: {
+          title: "Puppeteer CI/CD",
+          description_title: "Description",
+          addInfo:
+            "<strong>GoStage</strong> is a project carried out as a <strong>team effort</strong>, with the goal of creating a website that connects <strong>students</strong> looking for internships with <strong>companies</strong> seeking interns.\n\nThis project also aimed to <strong>test collaboration</strong> among team members and to gain experience working with web languages such as <strong>PHP</strong>, <strong>CSS</strong>, <strong>HTML</strong>, and <strong>JavaScript</strong>.",
+
+          project_task:
+            "My tasks mainly focused on the <strong>Back-end</strong> part.\n\nOriginally, I was assigned to <strong>deploy</strong> and <strong>secure</strong> the website, but that task was later given to another team member.\nI then worked on the section allowing <strong>students</strong> and <strong>companies</strong> to <strong>add</strong> and <strong>edit</strong> their information in their <strong>profiles</strong>. The profile included: photo, first name, last name, email, study program, CV, description, and <strong>favorite internship offers</strong>.\n\nFor companies, the profile contained different fields tailored to their needs.",
+
+          project_task_two:
+            "My second task was to create the <strong>list of internship offers</strong>.<br><br><strong>Companies</strong> could <strong>create</strong>, <strong>view</strong>, <strong>edit</strong>, and <strong>delete</strong> their offers, while <strong>students</strong> could <strong>view</strong> those offers and <strong>add them to their favorites</strong>.<br>The most challenging part of this task was implementing the <strong>dynamic display</strong> using <strong>JavaScript</strong> and managing <strong>filters</strong> to differentiate between the company view and the student view (showing favorites on the student profile).",
+
+          project_task_tree:
+            "Finally, my last task was to <strong>apply styling</strong> to the <strong>Front-end</strong> to achieve an <strong>aesthetic</strong> and <strong>professional</strong> look using <strong>CSS</strong>.",
+        },
+      };
+
+      // Apply translations
+      function applyTrans(lang) {
+        const t = trans[lang] || trans.FR;
+        for (const id in t) {
+          const el = document.getElementById(id);
+          if (el) el.innerHTML = t[id];
+        }
+      }
+
+      // Toggle button active state and apply translations
+      function switchLanguage(lang) {
+        applyTrans(lang);
+
+        const btnfr = document.getElementById("fr_button");
+        const btnen = document.getElementById("en_button");
+
+        btnfr.classList.remove("active");
+        btnen.classList.remove("active");
+
+        if (lang === "FR") {
+          btnfr.classList.add("active");
+        } else if (lang === "EN") {
+          btnen.classList.add("active");
+        }
+      }
+
+      // Initialize default language
+      document.addEventListener("DOMContentLoaded", function () {
+        switchLanguage("FR");
+      });
+    </script>
+  </body>
+</html>

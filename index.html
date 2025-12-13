@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vadim | Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="language_div">
+        <p class="language">language</p>
+        <button
+          class="lang-btn active"
+          id="fr_button"
+          onclick="switchLanguage('FR')"
+        >
+          France
+        </button>
+        <button class="lang-btn" id="en_button" onclick="switchLanguage('EN')">
+          English
+        </button>
+      </div>
+    </header>
+    <div class="title">
+      <h1 id="title"></h1>
+      <h1 class="name">Vadim</h1>
+    </div>
+
+    <main>
+      <div class="about_me_back">
+        <h2 id="aboutMe"></h2>
+        <h3 id="info"></h3>
+        <p>email : vadimriabov26042005@gmail.com</p>
+        <p id="name"></p>
+
+        <p id="addInfo"></p>
+      </div>
+      <div class="effect_back1">
+        <h2 id="effect_title_1"></h2>
+        <div class="effect_parent">
+          <div class="effect_card">
+            <div class="paralel"></div>
+            <div class="opacity_box">
+              <h3>Puppeteer</h3>
+              <p id="puppeteer_desc" class="p_effect_card"></p>
+              <button class="effect_button"><h4 id="read_more"></h4></button>
+            </div>
+          </div>
+
+          <div class="effect_card">
+            <div class="paralel"></div>
+            <div class="opacity_box">
+              <h3>Golang</h3>
+              <p id="golang_desc" class="p_effect_card"></p>
+              <button class="effect_button"><h4 id="read_more2"></h4></button>
+            </div>
+          </div>
+
+          <div class="effect_card">
+            <div class="paralel"></div>
+            <div class="opacity_box">
+              <h3>back-end</h3>
+              <p id="backend_desc" class="p_effect_card"></p>
+              <button class="effect_button"><h4 id="read_more3"></h4></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="quality_back" id="qualiter">
+        <h2 id="quality_title_2"></h2>
+        <div class="quality_parent">
+          <div class="quality"><h3 id="quality1"></h3></div>
+          <div class="quality"><h3>php</h3></div>
+          <div class="quality"><h3>bootstrap</h3></div>
+          <div class="quality"><h3>SQL</h3></div>
+        </div>
+      </div>
+
+      <div class="project_back" id="projet">
+        <h2 id="worked_project"></h2>
+        <div class="project_parent">
+          <a href="/project/puppeteer_automated_test.html">
+            <img
+              src="/image/puppeteer_automated_test.png"
+              alt="puppeteer logo"
+            />
+          </a>
+          <a href="/project/go_stage.html">
+            <img src="/image/gostage.png" alt="gostage logo" />
+          </a>
+          <a href="/project/clocker.html">
+            <img src="/image/clocker.png" alt="clocker logo" />
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <li>
+        <a id="quality" href="#qualiter" class="lii">qualiter</a>
+      </li>
+      <li>
+        <a id="about" href="#aboutMe">a propos</a>
+      </li>
+      <li>
+        <a id="project" href="#projet">Projet</a>
+      </li>
+      <li>
+        <a id="GitHub" href="https://github.com/Vadim26042005">GitHub</a>
+      </li>
+    </footer>
+
+    <script>
+      const trans = {
+        FR: {
+          title: "Portfolio",
+          aboutMe: "A propos de moi",
+          info: "Je suis etudiant a ecole informatique ESIC",
+          name: "Nom : Vadim Riabov",
+          addInfo: "j'aime bien le Back End",
+
+          quality_title_1: "Qualiter apris en entreprise",
+
+          puppeteer_desc:
+            "Puppeteer est un frame work de JavaScript qui a le but de produire des test CI/CD comme exemple.",
+          golang_desc:
+            "Golang est un langage de programation developper par google qui est a la base du C.",
+          backend_desc:
+            "Le developpement du back-end est la partie qui communique avec le serveur et la base de donnes.",
+
+          quality_title_2: "Qualiter apris en ecole",
+          quality1: "chef d'equipe",
+          read_more: "savoir plus",
+          read_more2: "savoir plus",
+          read_more3: "savoir plus",
+
+          worked_project: "Projet travailer",
+
+          quality: "qualités",
+          about: "a propos",
+          projetct: "projets",
+        },
+        EN: {
+          title: "Portfolio",
+          aboutMe: "About me",
+          info: "My name is Vadim I am student in ESIC",
+          name: "Name : Vadim Riavoc",
+
+          addInfo: "I like back-end",
+
+          quality_title_1: "Quality aquired in company",
+
+          puppeteer_desc:
+            "Puppeteer is a javascript Framework that is designed for web scraping and for making UI test",
+          golang_desc:
+            "Golang is a google developped language that is based on C",
+          backend_desc:
+            "Developpement of the well structured back-end (Repositories, services, server and buisness logic)",
+
+          quality_title_1: "Qualities aquired in copmany",
+          quality_title_2: "Qualities aquired in school",
+          read_more: "read more",
+          read_more2: "read more",
+          read_more3: "read more",
+
+          worked_project: "Worked project",
+
+          quality: "quality",
+          about: "about",
+          projetct: "project",
+        },
+      };
+
+      function applyTrans(lang) {
+        const t = trans[lang] || trans.FR;
+        for (const id in t) {
+          const el = document.getElementById(id);
+          if (el) el.textContent = t[id];
+        }
+      }
+
+      function switchLanguage(lang) {
+        applyTrans(lang);
+        const btnfr = document.getElementById("fr_button");
+        const btnen = document.getElementById("en_button");
+
+        // reset buttons
+        btnfr.classList.remove("active");
+        btnen.classList.remove("active");
+
+        if (lang === "FR") {
+          btnfr.classList.add("active");
+        } else if (lang === "EN") {
+          btnen.classList.add("active");
+        }
+      }
+      document.addEventListener("DOMContentLoaded", function () {
+        switchLanguage("FR");
+      });
+    </script>
+  </body>
+</html>

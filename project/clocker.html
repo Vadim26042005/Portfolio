@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Puppeteer tests</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="language_div">
+        <p class="language">Language:</p>
+        <button
+          class="lang-btn active"
+          id="fr_button"
+          onclick="switchLanguage('FR')"
+        >
+          Français
+        </button>
+        <button class="lang-btn" id="en_button" onclick="switchLanguage('EN')">
+          English
+        </button>
+        <p><a href="../index.html" class="lang-btn">Go back</a></p>
+      </div>
+    </header>
+
+    <h1 id="title"></h1>
+    <div class="marquee">
+      <h1 class="item1 delay1">Back-End</h1>
+      <h1 class="item1 delay2">Back-End</h1>
+      <h1 class="item1 delay3">Back-End</h1>
+      <h1 class="item1 delay4">Back-End</h1>
+      <h1 class="item1 delay5">Back-End</h1>
+    </div>
+    <div class="marquee">
+      <h1 class="item2 delay1_2">Google API</h1>
+      <h1 class="item2 delay2_2">Google API</h1>
+      <h1 class="item2 delay3_2">Google API</h1>
+      <h1 class="item2 delay4_2">Google API</h1>
+      <h1 class="item2 delay5_2">Google API</h1>
+    </div>
+    <div class="marquee">
+      <h1 class="item3 delay1_3">Spreadsheet</h1>
+      <h1 class="item3 delay2_3">Spreadsheet</h1>
+      <h1 class="item3 delay3_3">Spreadsheet</h1>
+      <h1 class="item3 delay4_3">Spreadsheet</h1>
+      <h1 class="item3 delay5_3">Spreadsheet</h1>
+    </div>
+
+    <main>
+      <div class="project_prop">
+        <div class="discription">
+          <div>
+            <img
+              src="../image/Clock_desc.png"
+              alt="screenshot or illustration"
+              class="project_image_gost"
+            />
+          </div>
+          <div>
+            <h2 id="description_title">Description</h2>
+            <p id="addInfo"></p>
+          </div>
+        </div>
+
+        <div class="about_task">
+          <div class="task">
+            <h3>Task 1</h3>
+            <p id="project_task"></p>
+          </div>
+
+          <div class="task">
+            <h3>Task 2</h3>
+            <p id="project_task_two"></p>
+          </div>
+
+          <div class="task">
+            <h3>Task 3</h3>
+            <p id="project_task_tree"></p>
+          </div>
+        </div>
+        <a href="../index.html" class="back_btn"><h3>Go back</h3></a>
+      </div>
+    </main>
+
+    <footer><a href="#"></a></footer>
+
+    <script>
+      // Translations used on this page
+      const trans = {
+        FR: {
+          title: "Puppeteer CI/CD",
+          description_title: "Description",
+          addInfo:
+            "C’est un projet conçu pour une école primaire afin de leur fournir une application d’appel des enfants (check-in / check-out), avec des fonctionnalités de comptage permettant de générer un PDF de factures. Pour l’instant, le projet n’est pas encore terminé : il reste à intégrer un système de paiement et à le connecter à la partie Front-End, qui est gérée par un autre membre du groupe.",
+
+          project_task:
+            "Au début, il fallait simplement connecter l’API à Google Spreadsheet. Pour cela, j’ai utilisé <strong>Golang</strong> et une clé d’identification (un fichier JSON contenant l’ID du projet, l’ID de l’utilisateur, l’email du client et la clé privée).",
+
+          project_task_two:
+            "Ensuite, une fois la connexion établie, j’ai dû créer des tables et permettre l’ajout d’informations via des requêtes <strong>cURL</strong> vers le serveur, afin d’insérer ces données dans la feuille Google Spreadsheet.\n",
+
+          project_task_tree:
+            "Enfin, afin que l’utilisateur puisse récupérer ses informations et effectuer un paiement, j’ai ajouté une logique de <strong>comptabilité horaire</strong> ainsi qu’une génération de <strong>PDF</strong> au format A4, récapitulant les informations comme la scolarité, la cantine et les sorties scolaires.",
+        },
+        EN: {
+          title: "Puppeteer CI/CD",
+          description_title: "Description",
+          addInfo:
+            "This project was designed for a primary school to provide them with a child check-in / check-out application, including attendance tracking and automatic PDF invoice generation. The project is not yet completed — it still needs a payment system and integration with the Front-End part, which is handled by another team member.",
+
+          project_task:
+            "At first, the goal was simply to connect the API to Google Spreadsheet. To do this, I used <strong>Golang</strong> and an identification key (a JSON file containing the project ID, user ID, client email, and private key).",
+
+          project_task_two:
+            "Then, once the connection was established, I implemented the ability to create tables and add information through <strong>cURL</strong> requests sent to the server, which would insert the data into the Google Spreadsheet.\n",
+
+          project_task_tree:
+            "Finally, so that the user could retrieve their data and make payments, I added <strong>time-based billing logic</strong> along with a <strong>PDF generation system</strong> in A4 format, listing details such as tuition, cafeteria, and school trip fees.",
+        },
+      };
+
+      // Apply translations
+      function applyTrans(lang) {
+        const t = trans[lang] || trans.FR;
+        for (const id in t) {
+          const el = document.getElementById(id);
+          if (el) el.innerHTML = t[id];
+        }
+      }
+
+      // Toggle button active state and apply translations
+      function switchLanguage(lang) {
+        applyTrans(lang);
+
+        const btnfr = document.getElementById("fr_button");
+        const btnen = document.getElementById("en_button");
+
+        btnfr.classList.remove("active");
+        btnen.classList.remove("active");
+
+        if (lang === "FR") {
+          btnfr.classList.add("active");
+        } else if (lang === "EN") {
+          btnen.classList.add("active");
+        }
+      }
+
+      // Initialize default language
+      document.addEventListener("DOMContentLoaded", function () {
+        switchLanguage("FR");
+      });
+    </script>
+  </body>
+</html>
