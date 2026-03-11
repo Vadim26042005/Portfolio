@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CoreFlow | Portfolio Vadim</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .doc-table { width: 100%; border-collapse: collapse; margin: 0.75rem 0; font-size: 0.9rem; }
+      .doc-table th, .doc-table td { padding: 0.5rem 0.75rem; text-align: left; border: 1px solid var(--border); }
+      .doc-table th { background: var(--bg-alt); color: var(--text-heading); font-weight: 600; }
+      .doc-table code { font-family: var(--font-mono); font-size: 0.85em; background: var(--bg-alt); padding: 0.15rem 0.4rem; border-radius: 4px; }
+      .doc-code { font-family: var(--font-mono); font-size: 0.85rem; background: var(--bg-alt); padding: 1rem; border-radius: 8px; margin: 0.5rem 0; overflow-x: auto; }
+      .doc-section { margin-bottom: 1.5rem; }
+      .doc-section h3 { color: var(--text-heading); font-size: 1rem; margin-bottom: 0.5rem; }
+    </style>
+  </head>
+  <body>
+    <header class="project_page_header">
+      <h1>CoreFlow</h1>
+      <a href="../index.html" class="back_btn">Retour a l'accueil</a>
+    </header>
+
+    <main>
+      <div class="project_prop">
+        <div class="discription">
+          <div>
+            <img src="../image/coreFlowLogo.png" alt="CoreFlow" class="project_image_gost" />
+          </div>
+          <div>
+            <h2>Description</h2>
+            <p><strong>CoreFlow</strong> est un intranet pour mettre en relation les entreprises et les employes. Projet realise avec <strong>Node.js</strong>, <strong>Express</strong>, <strong>MySQL</strong> et <strong>JavaScript</strong>. Voici la documentation essentielle des routes <code>event</code> de l'API.</p>
+          </div>
+        </div>
+
+        <div class="about_task">
+          <div class="task">
+            <h3>Authentification</h3>
+            <p>Toutes les routes <code>event</code> exigent un token. Obtenez-le via <code>POST /api/auth/login</code>, puis ajoutez le header : <code>Authorization: Bearer &lt;token&gt;</code>. Sans token valide : <code>401</code>.</p>
+          </div>
+
+          <div class="task">
+            <h3>Resume des routes</h3>
+            <table class="doc-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Methode</th>
+                  <th>Route</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>GET</td>
+                  <td><code>/event/list/participation/:user_id/:userRole</code></td>
+                  <td>Liste des evenements par participation et role</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>GET</td>
+                  <td><code>/event/list/:id</code></td>
+                  <td>Recuperer un evenement par ID</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>POST</td>
+                  <td><code>/event/create/:userRole</code></td>
+                  <td>Creer un evenement (admin/manager)</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>PUT</td>
+                  <td><code>/event/update</code></td>
+                  <td>Mettre a jour un evenement (admin/manager)</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>POST</td>
+                  <td><code>/event/user_list_by_email</code></td>
+                  <td>Recherche utilisateurs par email</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="task">
+            <h3>1. Liste des evenements</h3>
+            <p><strong>GET</strong> <code>http://localhost:3000/event/list/participation/:user_id/:userRole</code></p>
+            <p>Params : <code>user_id</code> (integer), <code>userRole</code> (admin, manager, employe, rh). Admin recoit tous les evenements ; les autres recoivent <code>eventLevelOne</code> et <code>eventLevelTwo</code>.</p>
+          </div>
+
+          <div class="task">
+            <h3>2. Evenement par ID</h3>
+            <p><strong>GET</strong> <code>http://localhost:3000/event/list/:id</code></p>
+            <p>Retourne <code>{ message, event }</code>.</p>
+          </div>
+
+          <div class="task">
+            <h3>3. Creation d'un evenement</h3>
+            <p><strong>POST</strong> <code>http://localhost:3000/event/create/:userRole</code></p>
+            <p>Champs obligatoires : <code>titre</code>, <code>type_evenement</code>, <code>date_debut</code>, <code>date_fin</code> (format <code>YYYY-MM-DD HH:mm:ss</code>), <code>organisateur_id</code>, <code>niveau</code> (1 = entreprise, 2 = service). Optionnels : <code>description</code>, <code>lieu</code>, <code>inviter</code> (emails separes par virgules), <code>departement</code>, <code>est_obligatoire</code>, <code>nb_places_max</code>, <code>statut</code>, <code>commentaire</code>.</p>
+            <pre class="doc-code">{
+  "titre": "Un meeting",
+  "type_evenement": "meeting",
+  "date_debut": "2026-06-21 12:00:00",
+  "date_fin": "2026-06-21 14:00:00",
+  "organisateur_id": 1,
+  "niveau": "1"
+}</pre>
+          </div>
+
+          <div class="task">
+            <h3>4. Mise a jour d'un evenement</h3>
+            <p><strong>PUT</strong> <code>http://localhost:3000/event/update</code></p>
+            <p>Body obligatoires : <code>id</code>, <code>organisateur_id</code>. Champs modifiables : <code>titre</code>, <code>description</code>, <code>type_evenement</code>, <code>date_debut</code>, <code>date_fin</code>, <code>lieu</code>, <code>est_obligatoire</code>, <code>nb_places_max</code>, <code>statut</code>, <code>niveau</code>, <code>inviter</code>, <code>statut_participation</code>, <code>commentaire</code>. Erreurs : <code>400</code>, <code>403</code> (PERMISSION_ERROR), <code>404</code> (NOT_FOUND).</p>
+          </div>
+
+          <div class="task">
+            <h3>5. Recherche utilisateurs par email</h3>
+            <p><strong>POST</strong> <code>http://localhost:3000/event/user_list_by_email</code></p>
+            <p>Body : <code>{ "email": "admin" }</code>. Retourne <code>{ message, usersInfos }</code> (tableau <code>{ id, email }</code>). <code>404</code> si aucun resultat.</p>
+          </div>
+
+          <div class="task">
+            <h3>Niveaux et visibilite</h3>
+            <p><strong>Niveau 1</strong> : evenement entreprise, visible par tous. <strong>Niveau 2</strong> : evenement de service, visible selon participations. <strong>Admin</strong> : voit tout. <strong>Manager / Employe / RH</strong> : voit selon <code>user_id</code> et participations.</p>
+          </div>
+        </div>
+        <a href="../index.html" class="back_btn">Retour a l'accueil</a>
+      </div>
+    </main>
+
+    <footer></footer>
+  </body>
+</html>

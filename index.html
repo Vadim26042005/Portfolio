@@ -1,210 +1,325 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vadim | Portfolio</title>
+    <title>Vadim Riabov | Portfolio</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
-    <header>
-      <div class="language_div">
-        <p class="language">language</p>
-        <button
-          class="lang-btn active"
-          id="fr_button"
-          onclick="switchLanguage('FR')"
-        >
-          France
-        </button>
-        <button class="lang-btn" id="en_button" onclick="switchLanguage('EN')">
-          English
-        </button>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+      <a href="#" class="nav-logo">&lt;V/&gt;</a>
+      <div class="nav-links">
+        <a href="#aboutMe">A propos</a>
+        <a href="#projet-personnel">Projets</a>
+        <a href="#qualiter">Competences</a>
+        <a href="#graph">Graphique</a>
+        <a href="#veille">Veille</a>
+        <a href="https://github.com/Vadim26042005" target="_blank" rel="noopener" class="nav-github">GitHub</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <p class="hero-greeting fade-up">Bonjour, je suis</p>
+        <h1 class="hero-name fade-up delay-1">Vadim Riabov</h1>
+        <p class="hero-role fade-up delay-2">Developpeur Back-End</p>
+        <div class="hero-cta fade-up delay-3">
+          <a href="#projet-personnel" class="btn btn-primary">Voir mes projets</a>
+          <a href="#aboutMe" class="btn btn-outline">En savoir plus</a>
+        </div>
+      </div>
+      <div class="hero-scroll">
+        <div class="scroll-indicator"></div>
       </div>
     </header>
-    <div class="title">
-      <h1 id="title"></h1>
-      <h1 class="name">Vadim</h1>
-    </div>
 
     <main>
-      <div class="about_me_back">
-        <h2 id="aboutMe"></h2>
-        <h3 id="info"></h3>
-        <p>email : vadimriabov26042005@gmail.com</p>
-        <p id="name"></p>
-
-        <p id="addInfo"></p>
-      </div>
-      <div class="effect_back1">
-        <h2 id="effect_title_1"></h2>
-        <div class="effect_parent">
-          <div class="effect_card">
-            <div class="paralel"></div>
-            <div class="opacity_box">
-              <h3>Puppeteer</h3>
-              <p id="puppeteer_desc" class="p_effect_card"></p>
-              <button class="effect_button"><h4 id="read_more"></h4></button>
+      <!-- About Me -->
+      <section class="section about-section" id="aboutMe">
+        <div class="container">
+          <h2 class="section-title fade-up">
+            <span class="title-accent">//</span> A propos de moi
+          </h2>
+          <div class="about-grid">
+            <div class="about-text fade-up delay-1">
+              <p class="about-intro">Etudiant a l'ecole informatique <strong>ESIC</strong>, passionne par le developpement Back-End.</p>
+              <p>J'aime concevoir des solutions serveur robustes et maintenables. Je suis toujours a la recherche de nouveaux defis techniques et de projets stimulants.</p>
             </div>
-          </div>
-
-          <div class="effect_card">
-            <div class="paralel"></div>
-            <div class="opacity_box">
-              <h3>Golang</h3>
-              <p id="golang_desc" class="p_effect_card"></p>
-              <button class="effect_button"><h4 id="read_more2"></h4></button>
-            </div>
-          </div>
-
-          <div class="effect_card">
-            <div class="paralel"></div>
-            <div class="opacity_box">
-              <h3>back-end</h3>
-              <p id="backend_desc" class="p_effect_card"></p>
-              <button class="effect_button"><h4 id="read_more3"></h4></button>
+            <div class="about-info fade-up delay-2">
+              <div class="info-card">
+                <div class="info-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </div>
+                <div>
+                  <span class="info-label">Nom</span>
+                  <span class="info-value">Vadim Riabov</span>
+                </div>
+              </div>
+              <div class="info-card">
+                <div class="info-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                </div>
+                <div>
+                  <span class="info-label">Email</span>
+                  <span class="info-value">vadimriabov26042005@gmail.com</span>
+                </div>
+              </div>
+              <div class="info-card">
+                <div class="info-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                </div>
+                <div>
+                  <span class="info-label">Formation</span>
+                  <span class="info-value">ESIC - Ecole informatique</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div class="quality_back" id="qualiter">
-        <h2 id="quality_title_2"></h2>
-        <div class="quality_parent">
-          <div class="quality"><h3 id="quality1"></h3></div>
-          <div class="quality"><h3>php</h3></div>
-          <div class="quality"><h3>bootstrap</h3></div>
-          <div class="quality"><h3>SQL</h3></div>
-        </div>
-      </div>
+      <!-- Personal Project -->
+      <section class="section projects-section" id="projet-personnel">
+        <div class="container">
+          <h2 class="section-title fade-up">
+            <span class="title-accent">//</span> Projet personnel
+          </h2>
+          <p class="section-desc fade-up delay-1">GoStage est un projet personnel realise en equipe pour mettre en relation etudiants et entreprises. L'objectif etait de creer une plateforme utile tout en experimentant la collaboration et les technologies web.</p>
+          <div class="projects-grid two-col fade-up delay-2">
+            <a href="project/go_stage.html" class="project-card featured">
+              <div class="card-image">
+                <img src="image/gostage.png" alt="GoStage" />
+                <div class="card-overlay">
+                  <span class="card-view">Voir le projet</span>
+                </div>
+              </div>
+              <div class="card-content">
+                <h3>GoStage</h3>
+                <p>Plateforme de mise en relation etudiants-entreprises</p>
+                <div class="card-tags">
+                  <span class="tag">PHP</span>
+                  <span class="tag">CSS</span>
+                  <span class="tag">HTML</span>
+                  <span class="tag">JavaScript</span>
+                </div>
+              </div>
+            </a>
 
-      <div class="project_back" id="projet">
-        <h2 id="worked_project"></h2>
-        <div class="project_parent">
-          <a href="/project/puppeteer_automated_test.html">
-            <img
-              src="/image/puppeteer_automated_test.png"
-              alt="puppeteer logo"
-            />
-          </a>
-          <a href="/project/go_stage.html">
-            <img src="/image/gostage.png" alt="gostage logo" />
-          </a>
-          <a href="/project/clocker.html">
-            <img src="/image/clocker.png" alt="clocker logo" />
-          </a>
+            <a href="project/coreflow.html" class="project-card featured">
+              <div class="card-image">
+                <img src="image/coreFlowLogo.png" alt="CoreFlow logo" />
+                <div class="card-overlay">
+                  <span class="card-view">Voir le projet</span>
+                </div>
+              </div>
+              <div class="card-content">
+                <h3>CoreFlow</h3>
+                <p>Intranet pour mettre en relation les entreprises et les employes</p>
+                <div class="card-tags">
+                  <span class="tag">JavaScript</span>
+                  <span class="tag">Node.js</span>
+                  <span class="tag">Express</span>
+                  <span class="tag">CSS</span>
+                  <span class="tag">MySQL</span>
+                </div>
+              </div>
+            </a>
+          </div>
         </div>
-      </div>
+      </section>
+
+      <!-- Company Projects -->
+      <section class="section projects-section alt-bg" id="projet-entreprise">
+        <div class="container">
+          <h2 class="section-title fade-up">
+            <span class="title-accent">//</span> Projets entreprise
+          </h2>
+          <p class="section-desc fade-up delay-1">Projets realises en alternance en entreprise : applications Back-End, tests automatises et integration d'APIs.</p>
+          <div class="projects-grid two-col fade-up delay-2">
+            <a href="project/clocker.html" class="project-card">
+              <div class="card-image">
+                <img src="image/clocker.png" alt="Clocker" />
+                <div class="card-overlay">
+                  <span class="card-view">Voir le projet</span>
+                </div>
+              </div>
+              <div class="card-content">
+                <h3>Clocker</h3>
+                <p>Application de check-in/check-out pour ecole primaire</p>
+                <div class="card-tags">
+                  <span class="tag">Golang</span>
+                  <span class="tag">API</span>
+                  <span class="tag">PDF</span>
+                </div>
+              </div>
+            </a>
+            <a href="project/puppeteer_automated_test.html" class="project-card">
+              <div class="card-image">
+                <img src="image/puppeteer_automated_test.png" alt="Puppeteer CI/CD" />
+                <div class="card-overlay">
+                  <span class="card-view">Voir le projet</span>
+                </div>
+              </div>
+              <div class="card-content">
+                <h3>Puppeteer CI/CD</h3>
+                <p>Tests end-to-end automatises avec pipeline CI/CD</p>
+                <div class="card-tags">
+                  <span class="tag">Puppeteer</span>
+                  <span class="tag">CI/CD</span>
+                  <span class="tag">E2E</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section class="section skills-section" id="qualiter">
+        <div class="container">
+          <h2 class="section-title fade-up">
+            <span class="title-accent">//</span> Competences acquises
+          </h2>
+          <div class="skills-grid fade-up delay-1">
+            <div class="skill-card">
+              <div class="skill-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <h3>Chef d'equipe</h3>
+              <p>Coordination et gestion de projet en equipe</p>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </div>
+              <h3>PHP</h3>
+              <p>Developpement Back-End et logique serveur</p>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              </div>
+              <h3>Bootstrap</h3>
+              <p>Framework CSS responsive et moderne</p>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+              </div>
+              <h3>SQL</h3>
+              <p>Gestion et manipulation de bases de donnees</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Graph -->
+      <section class="section graph-section alt-bg" id="graph">
+        <div class="container">
+          <h2 class="section-title fade-up">
+            <span class="title-accent">//</span> Graphique des taches
+          </h2>
+          <div class="graph-content fade-up delay-1">
+            <p>Recapitulatif des projets et taches realisees en 1ere et 2eme annee (ecole et entreprise).</p>
+            <a href="documents/graph.pdf" class="graph-image-link" download title="Telecharger le graphique">
+              <img src="documents/graph.jpg" alt="Graphique des taches - projets et activites 1ere et 2eme annee" class="graph-image" />
+            </a>
+            <a href="documents/graph.pdf" class="btn btn-primary graph-download" download>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Telecharger le graphique (PDF)
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Veille -->
+      <section class="section veille-section" id="veille">
+        <div class="container">
+          <h2 class="section-title fade-up">
+            <span class="title-accent">//</span> Veille technologique
+          </h2>
+          <div class="veille-content fade-up delay-1">
+            <div class="veille-placeholder">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              <p>Contenu a venir...</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <footer>
-      <li>
-        <a id="quality" href="#qualiter" class="lii">qualiter</a>
-      </li>
-      <li>
-        <a id="about" href="#aboutMe">a propos</a>
-      </li>
-      <li>
-        <a id="project" href="#projet">Projet</a>
-      </li>
-      <li>
-        <a id="GitHub" href="https://github.com/Vadim26042005">GitHub</a>
-      </li>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <span class="footer-logo">&lt;V/&gt;</span>
+            <p>Vadim Riabov - Developpeur Back-End</p>
+          </div>
+          <nav class="footer-nav">
+            <a href="#aboutMe">A propos</a>
+            <a href="#projet-personnel">Projet personnel</a>
+            <a href="#projet-entreprise">Projets entreprise</a>
+            <a href="#qualiter">Competences</a>
+            <a href="#graph">Graphique</a>
+            <a href="#veille">Veille</a>
+            <a href="https://github.com/Vadim26042005" target="_blank" rel="noopener">GitHub</a>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Vadim Riabov. Tous droits reserves.</p>
+        </div>
+      </div>
     </footer>
 
     <script>
-      const trans = {
-        FR: {
-          title: "Portfolio",
-          aboutMe: "A propos de moi",
-          info: "Je suis etudiant a ecole informatique ESIC",
-          name: "Nom : Vadim Riabov",
-          addInfo: "j'aime bien le Back End",
-
-          quality_title_1: "Qualiter apris en entreprise",
-
-          puppeteer_desc:
-            "Puppeteer est un frame work de JavaScript qui a le but de produire des test CI/CD comme exemple.",
-          golang_desc:
-            "Golang est un langage de programation developper par google qui est a la base du C.",
-          backend_desc:
-            "Le developpement du back-end est la partie qui communique avec le serveur et la base de donnes.",
-
-          quality_title_2: "Qualiter apris en ecole",
-          quality1: "chef d'equipe",
-          read_more: "savoir plus",
-          read_more2: "savoir plus",
-          read_more3: "savoir plus",
-
-          worked_project: "Projet travailer",
-
-          quality: "qualités",
-          about: "a propos",
-          projetct: "projets",
-        },
-        EN: {
-          title: "Portfolio",
-          aboutMe: "About me",
-          info: "My name is Vadim I am student in ESIC",
-          name: "Name : Vadim Riavoc",
-
-          addInfo: "I like back-end",
-
-          quality_title_1: "Quality aquired in company",
-
-          puppeteer_desc:
-            "Puppeteer is a javascript Framework that is designed for web scraping and for making UI test",
-          golang_desc:
-            "Golang is a google developped language that is based on C",
-          backend_desc:
-            "Developpement of the well structured back-end (Repositories, services, server and buisness logic)",
-
-          quality_title_1: "Qualities aquired in copmany",
-          quality_title_2: "Qualities aquired in school",
-          read_more: "read more",
-          read_more2: "read more",
-          read_more3: "read more",
-
-          worked_project: "Worked project",
-
-          quality: "quality",
-          about: "about",
-          projetct: "project",
-        },
-      };
-
-      function applyTrans(lang) {
-        const t = trans[lang] || trans.FR;
-        for (const id in t) {
-          const el = document.getElementById(id);
-          if (el) el.textContent = t[id];
-        }
-      }
-
-      function switchLanguage(lang) {
-        applyTrans(lang);
-        const btnfr = document.getElementById("fr_button");
-        const btnen = document.getElementById("en_button");
-
-        // reset buttons
-        btnfr.classList.remove("active");
-        btnen.classList.remove("active");
-
-        if (lang === "FR") {
-          btnfr.classList.add("active");
-        } else if (lang === "EN") {
-          btnen.classList.add("active");
-        }
-      }
-      document.addEventListener("DOMContentLoaded", function () {
-        switchLanguage("FR");
+      // Navbar scroll effect
+      const navbar = document.getElementById('navbar');
+      window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 50);
       });
+
+      // Mobile menu toggle
+      const navToggle = document.getElementById('navToggle');
+      const navLinks = document.querySelector('.nav-links');
+      navToggle.addEventListener('click', () => {
+        navToggle.classList.toggle('active');
+        navLinks.classList.toggle('active');
+      });
+
+      // Close mobile menu on link click
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navToggle.classList.remove('active');
+          navLinks.classList.remove('active');
+        });
+      });
+
+      // Scroll animations using IntersectionObserver
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+      document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
     </script>
   </body>
 </html>

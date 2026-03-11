@@ -1,161 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Puppeteer tests</title>
+    <title>Puppeteer CI/CD | Portfolio Vadim</title>
     <link rel="stylesheet" href="../style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
-    <header>
-      <div class="language_div">
-        <p class="language">Language:</p>
-        <button
-          class="lang-btn active"
-          id="fr_button"
-          onclick="switchLanguage('FR')"
-        >
-          Français
-        </button>
-        <button class="lang-btn" id="en_button" onclick="switchLanguage('EN')">
-          English
-        </button>
-        <p><a href="../index.html" class="lang-btn">Go back</a></p>
-      </div>
+    <header class="project_page_header">
+      <h1>Puppeteer CI/CD</h1>
+      <a href="../index.html" class="back_btn">Retour a l'accueil</a>
     </header>
-
-    <h1 id="title"></h1>
-    <div class="marquee">
-      <h1 class="item1 delay1">Puppeteer</h1>
-      <h1 class="item1 delay2">Puppeteer</h1>
-      <h1 class="item1 delay3">Puppeteer</h1>
-      <h1 class="item1 delay4">Puppeteer</h1>
-      <h1 class="item1 delay5">Puppeteer</h1>
-    </div>
-    <div class="marquee">
-      <h1 class="item2 delay1_2">CI/CD</h1>
-      <h1 class="item2 delay2_2">CI/CD</h1>
-      <h1 class="item2 delay3_2">CI/CD</h1>
-      <h1 class="item2 delay4_2">CI/CD</h1>
-      <h1 class="item2 delay5_2">CI/CD</h1>
-    </div>
-    <div class="marquee">
-      <h1 class="item3 delay1_3">tests</h1>
-      <h1 class="item3 delay2_3">tests</h1>
-      <h1 class="item3 delay3_3">tests</h1>
-      <h1 class="item3 delay4_3">tests</h1>
-      <h1 class="item3 delay5_3">tests</h1>
-    </div>
 
     <main>
       <div class="project_prop">
         <div class="discription">
           <div>
-            <img
-              src="../image/pup_desc.png"
-              alt="screenshot or illustration"
-              class="project_image"
-            />
+            <img src="../image/pup_desc.png" alt="Puppeteer" class="project_image" />
           </div>
           <div>
-            <h2 id="description_title">Description</h2>
-            <p id="addInfo"></p>
+            <h2>Description</h2>
+            <p>L'objectif est de mettre en place des tests end-to-end (E2E) avec Puppeteer et de les integrer dans une pipeline CI/CD. Si un test echoue, la mise en production est bloquee jusqu'a ce que le probleme soit resolu.</p>
+            <p>J'avais plusieurs taches consistant a creer des <strong>scripts de test Puppeteer</strong> pour trois applications web. L'objectif etait de tester l'<strong>interface utilisateur</strong> et de verifier ses fonctionnalites avant la mise en production.</p>
           </div>
         </div>
 
         <div class="about_task">
           <div class="task">
-            <h3>Task 1</h3>
-            <p id="project_task"></p>
+            <h3>Tache 1</h3>
+            <p>La premiere tache consistait a creer un test Puppeteer qui verifiait la <strong>connexion</strong> dans Calljack. Calljack est une application web developpee en Golang pour accelerer la generation de documents avec des valeurs specifiques en grand nombre.
+
+Le test effectuait la connexion via <strong>l'authentification Google</strong> puis verifiait chaque champ de saisie, bouton, menu de selection et validation.
+Apres avoir execute tous les tests, il retournait les resultats.
+
+Mais tout n'etait pas parfait : les scripts s'executaient trop vite, j'ai donc du ajuster les <strong>timeouts</strong> pour chaque test. Malgre cela, l'application etait imparfaite et parfois les tests echouaient lors des clics sur les boutons ou pendant l'inscription.
+
+Au final, j'evaluerais l'efficacite de cette tache a environ <strong>60% d'utilite</strong> — pas prete pour la mise en production.</p>
           </div>
 
           <div class="task">
-            <h3>Task 2</h3>
-            <p id="project_task_two"></p>
+            <h3>Tache 2</h3>
+            <p>Ma deuxieme tache etait de creer un <strong>test Puppeteer</strong> qui verifiait les <strong>fonctionnalites de paiement</strong> dans l'application appelee <strong>api-paybox</strong>.
+
+Cette application a ete creee pour la plateforme de paris <strong>DoinSport</strong>.
+Ici, j'ai essaye d'ameliorer mes erreurs precedentes comme les <strong>tests en dur</strong>, les <strong>timeouts en dur</strong>, la faible lisibilite et la structure lourde du code.
+Dans cette tache, le test de paiement devait etre execute avec differentes valeurs de cartes et differentes societes. Cela signifiait varier les <strong>numeros de carte</strong>, <strong>dates d'expiration</strong> et <strong>emetteurs</strong>. J'ai cree une liste de societes de cartes au debut de mon fichier, puis utilise ces valeurs dans les champs de saisie.
+
+Ce test etait bien meilleur et les resultats etaient globalement positifs. J'evaluerais cette tache a environ <strong>80% d'utilite</strong>.</p>
           </div>
 
           <div class="task">
-            <h3>Task 3</h3>
-            <p id="project_task_tree"></p>
+            <h3>Tache 3</h3>
+            <p>Ma troisieme tache consistait a creer un <strong>test Puppeteer</strong> qui verifiait les <strong>fonctionnalites de filtrage</strong> afin que l'application puisse etre correctement testee avant la mise en production.
+
+L'application web s'appelle <strong>DoinSport</strong>, ou mon equipe avait cree un systeme de filtrage base sur les donnees des utilisateurs.
+
+En parallele, j'ai cree un test Puppeteer qui verifiait chacun des 22 filtres.
+Parmi ceux-ci, il y avait 5 filtres principaux : <strong>ordre alphabetique</strong>, <strong>par numero</strong>, <strong>par nom</strong>, <strong>par date</strong> et <strong>entre deux nombres</strong>.
+Je n'ai pas essaye de reinventer la roue : j'ai applique une logique similaire a celle de mes taches precedentes. Cette fois-ci, cependant, j'ai ajoute des parametres pour specifier exactement quels tests executer et lesquels ignorer.
+
+Cela m'a donne de meilleurs resultats et supprime le besoin d'attendre la fin d'un test avant d'en commencer un autre.
+
+Au final, j'evaluerais cette tache a environ <strong>90% d'utilite</strong>.</p>
           </div>
         </div>
-        <a href="../index.html" class="back_btn"><h3>Go back</h3></a>
+        <a href="../index.html" class="back_btn">Retour a l'accueil</a>
       </div>
     </main>
 
-    <footer><a href="#"></a></footer>
-
-    <script>
-      // Translations used on this page
-      const trans = {
-        FR: {
-          title: "Puppeteer CI/CD",
-          description_title: "Description",
-          addInfo:
-            "L'objectif est de mettre en place des tests end-to-end (E2E) avec Puppeteer et de les intégrer dans une pipeline CI/CD.<br><br> Si un test échoue, la mise en production est bloquée jusqu'à ce que le problème soit résolu. J'avais plusieurs tâches consistant à créer des <strong>scripts de test Puppeteer</strong> pour trois applications web. L'objectif était de tester l'<strong>interface utilisateur</strong> et de vérifier ses fonctionnalités avant la mise en production.",
-
-          project_task:
-            "La première tâche consistait à créer un test Puppeteer qui vérifiait la <strong>connexion</strong> dans Calljack. Calljack est une application web développée en Golang pour accélérer la génération de documents avec des valeurs spécifiques en grand nombre.\n\nLe test effectuait la connexion via <strong>l'authentification Google</strong> puis vérifiait chaque champ de saisie, bouton, menu de sélection et validation.\nAprès avoir exécuté tous les tests, il retournait les résultats.\n\nMais tout n'était pas parfait : les scripts s'exécutaient trop vite, j'ai donc dû ajuster les <strong>timeouts</strong> pour chaque test. Malgré cela, l'application était imparfaite et parfois les tests échouaient lors des clics sur les boutons ou pendant l'inscription.\n\nAu final, j'évaluerais l'efficacité de cette tâche à environ <strong>60% d'utilité</strong> — pas prête pour la mise en production.",
-
-          project_task_two:
-            "Ma deuxième tâche était de créer un <strong>test Puppeteer</strong> qui vérifiait les <strong>fonctionnalités de paiement</strong> dans l'application appelée <strong>api-paybox</strong>.<br><br>Cette application a été créée pour la plateforme de paris <strong>DoinSport</strong>.<br>Ici, j'ai essayé d'améliorer mes erreurs précédentes comme les <strong>tests en dur</strong>, les <strong>timeouts en dur</strong>, la faible lisibilité et la structure lourde du code.<br>Dans cette tâche, le test de paiement devait être exécuté avec différentes valeurs de cartes et différentes sociétés. Cela signifiait varier les <strong>numéros de carte</strong>, <strong>dates d'expiration</strong> et <strong>émetteurs</strong>. J'ai créé une liste de sociétés de cartes au début de mon fichier, puis utilisé ces valeurs dans les champs de saisie.<br><br>Ce test était bien meilleur et les résultats étaient globalement positifs. J'évaluerais cette tâche à environ <strong>80% d'utilité</strong>.",
-
-          project_task_tree:
-            "Ma troisième tâche consistait à créer un <strong>test Puppeteer</strong> qui vérifiait les <strong>fonctionnalités de filtrage</strong> afin que l'application puisse être correctement testée avant la mise en production.<br><br>L'application web s'appelle <strong>DoinSport</strong>, où mon équipe avait créé un système de filtrage basé sur les données des utilisateurs.<br><br>En parallèle, j'ai créé un test Puppeteer qui vérifiait chacun des 22 filtres.<br>Parmi ceux-ci, il y avait 5 filtres principaux : <strong>ordre alphabétique</strong>, <strong>par numéro</strong>, <strong>par nom</strong>, <strong>par date</strong> et <strong>entre deux nombres</strong>.<br>Je n'ai pas essayé de réinventer la roue : j'ai appliqué une logique similaire à celle de mes tâches précédentes. Cette fois-ci, cependant, j'ai ajouté des paramètres pour spécifier exactement quels tests exécuter et lesquels ignorer.<br><br>Cela m'a donné de meilleurs résultats et supprimé le besoin d'attendre la fin d'un test avant d'en commencer un autre.\n\nAu final, j'évaluerais cette tâche à environ <strong>90% d'utilité</strong>.",
-        },
-        EN: {
-          title: "Puppeteer CI/CD",
-          description_title: "Description",
-          addInfo:
-            "The goal is to implement end-to-end (E2E) tests using Puppeteer and integrate them into a CI/CD pipeline.<br><br> If a test fails, deployment to production is blocked until the issue is fixed. I had multiple tasks to create <strong>Puppeteer test scripts</strong> for three web applications. The goal was to test the <strong>User Interface</strong> and verify its functionalities before the applications went into production.",
-
-          project_task:
-            "The first task was to create a Puppeteer test that verified the <strong>login</strong> in Calljack. Calljack is a web app built with Golang to accelerate document generation with specific values in large numbers.\n\nThe test performed the login via <strong>Google authentication</strong> and then checked each input field, button, select, and checkout.\nAfter running all the tests, it returned the results.\n\nBut there is no good without some bad. The scripts were running too fast, so I had to adjust the <strong>timeouts</strong> for each test. Even with that, the app was imperfect, and sometimes the tests crashed during button clicks or registration.\n\nOverall, I would rate the functioning of this task at about <strong>60% usefulness</strong> — not ready for deployment.",
-
-          project_task_two:
-            "My second task was to create a <strong>Puppeteer test</strong> that verified the <strong>payment functionalities</strong> in the application called <strong>api-paybox</strong>.<br><br>This application was created for the betting platform <strong>DoinSport</strong>.<br>Here I tried to improve my previous mistakes such as <strong>hardcoded tests</strong>, <strong>hardcoded timeouts</strong>, poor readability, and the obelisk-like structure of the code.<br>In this task, the payment test needed to run with different card values and different companies. That meant varying the <strong>card numbers</strong>, <strong>expiration dates</strong>, and <strong>card issuers</strong>. I created a list of card companies at the top of my file and then used those values in the input fields.<br><br>This test was much better, and the output results were mostly positive. I would rate this task at about <strong>80% usefulness</strong>.",
-
-          project_task_tree:
-            "My third task was to create a <strong>Puppeteer test</strong> that verified the <strong>filter functionalities</strong> so the web app could be properly tested before going into production.<br><br>The web application is called <strong>DoinSport</strong>, where my team created a filtration system with user data.<br><br>In parallel, I created a Puppeteer test that checked each of the 22 filter selectors.<br> Among these, there were 5 main selectors: <strong>alphabetical order</strong>, <strong>by number</strong>, <strong>by name</strong>, <strong>by date</strong>, and <strong>between two numbers</strong>.<br> I didn’t try to reinvent the wheel — instead, I applied similar logic from my previous tasks. This time, however, I added parameters to specify exactly which tests to run and which ones to skip.<br><br> This gave me better results and removed the need to wait for one test to finish before starting another.\n\nOverall, I would rate this task at about <strong>90% usefulness</strong>.",
-        },
-      };
-
-      // Apply translations
-      function applyTrans(lang) {
-        const t = trans[lang] || trans.FR;
-        for (const id in t) {
-          const el = document.getElementById(id);
-          if (el) el.innerHTML = t[id];
-        }
-      }
-
-      // Toggle button active state and apply translations
-      function switchLanguage(lang) {
-        applyTrans(lang);
-
-        const btnfr = document.getElementById("fr_button");
-        const btnen = document.getElementById("en_button");
-
-        btnfr.classList.remove("active");
-        btnen.classList.remove("active");
-
-        if (lang === "FR") {
-          btnfr.classList.add("active");
-        } else if (lang === "EN") {
-          btnen.classList.add("active");
-        }
-      }
-
-      // Initialize default language
-      document.addEventListener("DOMContentLoaded", function () {
-        switchLanguage("EN");
-      });
-    </script>
+    <footer></footer>
   </body>
 </html>
