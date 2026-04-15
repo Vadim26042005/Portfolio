@@ -620,7 +620,32 @@ a {
   gap: 1.5rem;
 }
 
+.skills-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.skills-category {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.skills-category-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  letter-spacing: 0.02em;
+}
+
+.skills-category .skills-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .skill-card {
+  --skill-color: var(--accent);
+  --skill-bg: rgba(108, 99, 255, 0.1);
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
@@ -659,18 +684,30 @@ a {
   justify-content: center;
   width: 64px;
   height: 64px;
-  background: rgba(108, 99, 255, 0.1);
+  background: var(--skill-bg);
   border-radius: 16px;
-  color: var(--accent);
+  color: var(--skill-color);
   margin-bottom: 1.25rem;
   transition: var(--transition);
 }
 
 .skill-card:hover .skill-icon {
-  background: var(--accent);
+  background: var(--skill-color);
   color: white;
   transform: scale(1.1);
 }
+
+.skill-teamwork { --skill-color: #22c55e; --skill-bg: rgba(34, 197, 94, 0.12); }
+.skill-php { --skill-color: #777bb4; --skill-bg: rgba(119, 123, 180, 0.14); }
+.skill-bootstrap { --skill-color: #7952b3; --skill-bg: rgba(121, 82, 179, 0.14); }
+.skill-sql { --skill-color: #2563eb; --skill-bg: rgba(37, 99, 235, 0.14); }
+.skill-golang { --skill-color: #00add8; --skill-bg: rgba(0, 173, 216, 0.16); }
+.skill-javascript { --skill-color: #facc15; --skill-bg: rgba(250, 204, 21, 0.2); }
+.skill-postgresql { --skill-color: #336791; --skill-bg: rgba(51, 103, 145, 0.16); }
+.skill-dart { --skill-color: #0175c2; --skill-bg: rgba(1, 117, 194, 0.16); }
+.skill-github { --skill-color: #f5f5f5; --skill-bg: rgba(245, 245, 245, 0.12); }
+.skill-postman { --skill-color: #ff6c37; --skill-bg: rgba(255, 108, 55, 0.14); }
+.skill-trello { --skill-color: #0079bf; --skill-bg: rgba(0, 121, 191, 0.14); }
 
 .skill-card h3 {
   font-size: 1.15rem;
@@ -727,12 +764,77 @@ a {
   display: inline-flex;
 }
 
+.graph-download-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
 /* ============================================
    VEILLE SECTION
    ============================================ */
-.veille-content {
-  max-width: 600px;
-}
+   .veille-content {
+    max-width: 750px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .veille-article {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    line-height: 1.6;
+  }
+  
+  .veille-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #1a1a1a;
+  }
+  
+  .veille-intro {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  .veille-image {
+    width: 100%;
+    border-radius: 12px;
+    margin: 20px 0;
+  }
+  
+  .veille-section {
+    margin-top: 25px;
+  }
+  
+  .veille-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #2c3e50;
+  }
+  
+  .veille-section ul {
+    padding-left: 20px;
+  }
+  
+  .veille-section li {
+    margin-bottom: 8px;
+  }
+  
+  .veille-section strong {
+    color: #000;
+  }
+  
+  .conclusion {
+    background: #f5f7fa;
+    padding: 15px;
+    border-radius: 10px;
+  }
 
 .veille-placeholder {
   display: flex;
@@ -755,6 +857,50 @@ a {
 .veille-placeholder p {
   font-style: italic;
   font-size: 1.05rem;
+}
+
+.veille-article {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  color: var(--text-muted);
+  text-align: left;
+  box-shadow: var(--shadow-md);
+}
+
+.veille-article h3 {
+  color: var(--text-heading);
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.veille-article h4 {
+  color: var(--text-heading);
+  font-size: 1.05rem;
+  margin: 1.25rem 0 0.6rem;
+}
+
+.veille-article p {
+  line-height: 1.7;
+}
+
+.veille-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  margin: 0.5rem 0 1rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.veille-article ul {
+  margin: 0.5rem 0 0.75rem 1.2rem;
+}
+
+.veille-article li {
+  margin-bottom: 0.35rem;
+  line-height: 1.6;
 }
 
 /* ============================================
