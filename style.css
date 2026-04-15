@@ -815,7 +815,7 @@ a {
   .veille-section h3 {
     font-size: 18px;
     margin-bottom: 10px;
-    color: #2c3e50;
+    color: #ffffff;
   }
   
   .veille-section ul {
@@ -824,16 +824,18 @@ a {
   
   .veille-section li {
     margin-bottom: 8px;
+    color: #f2f4f8;
   }
   
   .veille-section strong {
-    color: #000;
+    color: #ffffff;
   }
   
   .conclusion {
-    background: #f5f7fa;
+    background: rgba(255, 255, 255, 0.06);
     padding: 15px;
     border-radius: 10px;
+    color: #ffffff;
   }
 
 .veille-placeholder {
@@ -864,25 +866,26 @@ a {
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 2rem;
-  color: var(--text-muted);
+  color: #f2f4f8;
   text-align: left;
   box-shadow: var(--shadow-md);
 }
 
 .veille-article h3 {
-  color: var(--text-heading);
+  color: #ffffff;
   font-size: 1.3rem;
   margin-bottom: 1rem;
 }
 
 .veille-article h4 {
-  color: var(--text-heading);
+  color: #ffffff;
   font-size: 1.05rem;
   margin: 1.25rem 0 0.6rem;
 }
 
 .veille-article p {
   line-height: 1.7;
+  color: #f2f4f8;
 }
 
 .veille-image {
@@ -901,6 +904,7 @@ a {
 .veille-article li {
   margin-bottom: 0.35rem;
   line-height: 1.6;
+  color: #f2f4f8;
 }
 
 /* ============================================
